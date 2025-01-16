@@ -1,0 +1,32 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.19",
+    "@tresjs/cientos": "^4.0.3",
+    "@tresjs/core": "^4.3.2",
+    "@types/three": "^0.172.0",
+    "@vueuse/core": "^10.7.2",
+    "@vueuse/motion": "^2.0.0",
+    "cannon-es": "^0.20.0",
+    "draco3d": "^1.5.7",
+    "gsap": "^3.12.7",
+    "locomotive-scroll": "^5.0.0-beta.11",
+    "nuxt": "^3.15.2",
+    "nuxt3-animejs": "^1.1.5",
+    "tailwindcss": "^3.4.1",
+    "three": "^0.172.0",
+    "vanilla-tilt": "^1.8.1",
+    "vue": "latest",
+    "vue-router": "latest",
+    "vue-scrollama": "^2.0.6"
+  }
+}
