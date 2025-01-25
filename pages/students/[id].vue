@@ -49,6 +49,24 @@
 
             <div class="profile-details">
               <p class="bio">{{ studentData.bio }}</p>
+              <div class="technologies-section">
+                <h3 class="tech-title">Technologies</h3>
+                <div class="tech-tags">
+                  <div v-for="(tech, index) in studentData.technologies" 
+                       :key="tech"
+                       class="tech-tag"
+                       :class="getRandomColorClass(index)"
+                       v-motion
+                       :initial="{ opacity: 0, y: 20 }"
+                       :enter="{ 
+                         opacity: 1, 
+                         y: 0,
+                         transition: { duration: 400, delay: Math.random() * 500 }
+                       }">
+                    {{ tech }}
+                  </div>
+                </div>
+              </div>
               <div class="action-buttons">
                 <button class="hire-button" @click="handleHireClick">
                   <span class="button-content">
@@ -187,6 +205,15 @@ const getOrbitPosition = (index: number, total: number) => {
 const handleHireClick = () => {
   // You can customize this to open a contact form or mailto link
   window.location.href = `mailto:${studentData.value.email}?subject=Job Opportunity for ${studentData.value.name}`;
+}
+
+// Add this function for random color assignment
+const getRandomColorClass = (index: number) => {
+  const colors = [
+    'blue', 'purple', 'green', 'orange', 'pink', 
+    'teal', 'indigo', 'cyan', 'rose', 'amber'
+  ];
+  return colors[index % colors.length];
 }
 </script>
 
@@ -549,6 +576,140 @@ const handleHireClick = () => {
 @media (max-width: 768px) {
   .action-buttons {
     justify-content: center;
+  }
+}
+
+.technologies-section {
+  margin: 2rem 0;
+  background: rgba(22, 28, 36, 0.6);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #4B79E4;
+  font-weight: 600;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  cursor: default;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Color variations for tech tags */
+.tech-tag.blue {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+.tech-tag.blue:hover {
+  background: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.tech-tag.purple {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+.tech-tag.purple:hover {
+  background: rgba(168, 85, 247, 0.25);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+}
+
+.tech-tag.green {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+.tech-tag.green:hover {
+  background: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.tech-tag.orange {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+.tech-tag.orange:hover {
+  background: rgba(249, 115, 22, 0.25);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+}
+
+.tech-tag.pink {
+  background: rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.3);
+}
+.tech-tag.pink:hover {
+  background: rgba(236, 72, 153, 0.25);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+}
+
+.tech-tag.teal {
+  background: rgba(20, 184, 166, 0.15);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+.tech-tag.teal:hover {
+  background: rgba(20, 184, 166, 0.25);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+}
+
+.tech-tag.indigo {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+.tech-tag.indigo:hover {
+  background: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.tech-tag.cyan {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+.tech-tag.cyan:hover {
+  background: rgba(6, 182, 212, 0.25);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+}
+
+.tech-tag.rose {
+  background: rgba(244, 63, 94, 0.15);
+  border-color: rgba(244, 63, 94, 0.3);
+}
+.tech-tag.rose:hover {
+  background: rgba(244, 63, 94, 0.25);
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+}
+
+.tech-tag.amber {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+.tech-tag.amber:hover {
+  background: rgba(245, 158, 11, 0.25);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+@media (max-width: 768px) {
+  .tech-tags {
+    gap: 0.6rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 </style> 

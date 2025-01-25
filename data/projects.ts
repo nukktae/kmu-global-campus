@@ -90,159 +90,231 @@ export const projects: Project[] = [
   // AWS Projects
   {
     id: 3,
-    title: "CloudScale Analytics",
-    description: "Serverless analytics platform processing real-time student engagement data.",
+    title: "Duel: Automated Deck Creation for Quizlet",
+    description: "Duel automates flashcard deck generation for Quizlet users by analyzing video content. This solution reduces the time to create flashcards by 96% compared to manual efforts, enhancing user experience and engagement.",
     category: "AWS",
     status: "completed",
-    technologies: ["AWS Lambda", "DynamoDB", "Kinesis", "CloudFront", "React"],
-    team: [
-      { id: 5, name: "Michael Zhang", avatar: "/avatars/michael.jpg", role: "Cloud Architect" },
-      { id: 6, name: "Lisa Wang", avatar: "/avatars/lisa.jpg", role: "Data Engineer" },
-      { id: 7, name: "Tom Johnson", avatar: "/avatars/tom.jpg", role: "Frontend Developer" }
+    technologies: [
+      "AWS Lambda",
+      "Amazon S3",
+      "Amazon Transcribe",
+      "AWS Bedrock"
     ],
-    github: "https://github.com/cloudscale/analytics",
-    projectImage: "/images/projects/cloudscale.jpeg",
-    highlights: ["Real-time processing", "Serverless architecture", "Custom dashboards"]
+    team: [
+      { id: 1, name: "Deokryong Na", role: "Frontend Engineer" },
+      { id: 2, name: "Dongyeon Kim", role: "Backend Engineer" },
+      { id: 3, name: "Kihoon Kim", role: "Data Engineer" }
+    ],
+    github: null,
+    demo: null,
+    projectImage: "/images/projects/duel.png",
+    highlights: [
+      "Automates deck creation from 1-hour video in under 8 minutes",
+      "Improves user engagement by 80% within six months",
+      "Supports up to 10M decks during peak exam periods",
+      "Scalable AWS architecture reducing costs by 42% compared to on-premises solutions",
+      "Processes 40M video minutes monthly with real-time performance"
+    ],
+    presentation: "/presentations/duel-deck.pdf"
   },
   {
     id: 4,
-    title: "ServerlessVision",
-    description: "AI-powered image processing pipeline using serverless architecture for real-time content moderation.",
+    title: "AWS Content Moderation System",
+    description: "A scalable, real-time content moderation system leveraging AWS cloud architecture to process and filter harmful media in streaming platforms. The system incorporates AI and automation to ensure efficient, cost-effective moderation.",
     category: "AWS",
     status: "completed",
-    technologies: ["AWS Lambda", "Rekognition", "S3", "SQS", "CloudWatch", "React"],
-    team: [
-      { id: 8, name: "Kihoon Kim", role: "Cloud Architect" },
-      { id: 9, name: "Sarah Park", role: "ML Engineer" },
-      { id: 10, name: "David Chen", role: "Frontend Developer" }
+    technologies: [
+      "AWS Lambda",
+      "Kinesis Video Streams",
+      "Amazon Rekognition",
+      "DynamoDB"
     ],
-    github: "https://github.com/serverless-vision",
-    projectImage: "/images/projects/serverless-vision.jpeg",
+    team: [
+      { id: 1, name: "Anu B", role: "Solution Architect (Demo & Cost Estimation)" },
+      { id: 2, name: "Jeonghee Lee", role: "Solution Architect (Business Model)" },
+      { id: 3, name: "Haram Lee", role: "Solution Architect (Architecture & Demo)" }
+    ],
+    github: null,
+    demo: null,
+    projectImage: "/images/projects/realmo.png",
     highlights: [
-      "Real-time image processing",
-      "Content moderation API",
-      "Scalable architecture",
-      "Cost-effective solution"
-    ]
+      "Dynamic content moderation using AWS Rekognition",
+      "Optimized for scalability with cost-effective resource management",
+      "Integrated CloudWatch for advanced monitoring and metrics",
+      "Achieved 400-500% higher traffic handling capacity post-optimization",
+      "Real-time frame analysis and harmful content flagging"
+    ],
+    presentation: "/presentations/aws-content-moderation.pdf"
   },
   {
     id: 5,
-    title: "DataStream Hub",
-    description: "Real-time data streaming and processing platform using AWS managed services.",
+    title: "Vori: Voice-Powered Kanban Board",
+    description: "Vori is a voice-driven project management tool integrating AI-powered transcription and real-time updates to Kanban boards. It simplifies ticket creation and status updates, saving time for agile teams during daily standups and sprint reviews.",
     category: "AWS",
     status: "completed",
-    technologies: ["AWS Kinesis", "MSK", "ECS", "DynamoDB", "CloudFormation"],
-    team: [
-      { id: 11, name: "Kyoungin Nam", role: "Data Engineer" },
-      { id: 12, name: "Alex Wong", role: "Backend Developer" },
-      { id: 13, name: "Emma Liu", role: "DevOps Engineer" }
+    technologies: [
+      "AWS Lambda",
+      "Amazon Transcribe",
+      "AWS Bedrock",
+      "API Gateway"
     ],
-    github: "https://github.com/datastream-hub",
-    projectImage: "/images/projects/datastream.jpeg",
+    team: [
+      { id: 1, name: "Nahyun Joo", role: "CPO, Frontend & Business" },
+      { id: 2, name: "Hojun Lim", role: "CTO, Full-stack Developer" },
+      { id: 3, name: "Kyoungin Nam", role: "CEO, Backend & Data Engineer" }
+    ],
+    github: null,
+    demo: null,
+    projectImage: "/images/projects/vori.png",
     highlights: [
-      "Real-time analytics",
-      "Fault-tolerant architecture",
-      "Auto-scaling capabilities",
-      "Monitoring dashboard"
-    ]
+      "Automatic ticket management based on voice commands",
+      "Real-time updates to Kanban boards",
+      "Efficient sprint tracking and task capturing",
+      "Integration with Amazon Transcribe for accurate speech-to-text conversion",
+      "Scalable architecture leveraging AWS cloud services"
+    ],
+    presentation: "/presentations/vori-deck.pdf"
   },
 
   // LLM Projects
   {
     id: 6,
-    title: "CodeMentor AI",
-    description: "AI-powered coding assistant using advanced LLMs to provide real-time code suggestions and reviews.",
+    title: "Story Chat: AI Learning Assistant",
+    description: "Story Chat is an AI-powered learning assistant for children aged 3-12. It provides an interactive reading experience by combining AI-driven conversations, creative image generation, and educational insights tailored to various age groups.",
     category: "LLM",
-    status: "in-progress",
-    technologies: ["Python", "PyTorch", "FastAPI", "Redis", "Vue.js"],
-    team: [
-      { id: 11, name: "Ryan Kim", avatar: "/avatars/ryan.jpg", role: "ML Engineer" },
-      { id: 12, name: "Sophie Chen", avatar: "/avatars/sophie.jpg", role: "NLP Specialist" },
-      { id: 13, name: "James Lee", avatar: "/avatars/james.jpg", role: "Full Stack Developer" }
+    status: "completed",
+    technologies: [
+      "OpenAI GPT-4",
+      "OpenAI Whisper",
+      "OpenAI DALL-E",
+      "HarryPotterDB"
     ],
-    github: "https://github.com/codementor/ai",
-    thumbnail: "/projects/codementor-thumb.jpg",
-    highlights: ["Custom LLM model", "Real-time suggestions", "Code analysis"]
+    team: [
+      { id: 1, name: "Jeonghee Lee", role: "User & Market Research, Business Model" },
+      { id: 2, name: "Nahyun Joo", role: "Design and Service Development" }
+    ],
+    github: null,
+    demo: "https://kids-learning-assistant-production.up.railway.app/",
+    projectImage: "/images/projects/storychat.png",
+    highlights: [
+      "Supports over 40,000 children's books via integration with Epic!",
+      "Customizes conversations and images for three age groups: 3-5, 6-8, 9-12 years",
+      "Enhances creativity, critical thinking, and problem-solving through interactive prompts",
+      "Seamless integration of voice-to-text, text-to-voice, and image generation",
+      "Highly scalable with plans for plugin support for global e-book platforms"
+    ],
+    presentation: "/presentations/story-chat-deck.pdf"
   },
   {
     id: 7,
-    title: "LangChain Assistant",
-    description: "Customizable AI assistant platform using LangChain for enterprise applications.",
+    title: "MakeEat: AI-Powered Recipe Generator",
+    description: "MakeEat is an AI-driven smart recipe generator that personalizes meal suggestions based on users' preferences and purchased ingredients, utilizing advanced receipt image analysis and nutritional calculations.",
     category: "LLM",
     status: "completed",
-    technologies: ["Python", "LangChain", "FastAPI", "MongoDB", "React", "GPT-4"],
-    team: [
-      { id: 14, name: "Sarah Chen", role: "ML Engineer" },
-      { id: 15, name: "James Park", role: "Backend Developer" }
+    technologies: [
+      "FatSecret API",
+      "Tesseract OCR",
+      "PyTorch",
+      "FastAPI"
     ],
-    github: "https://github.com/langchain-assistant",
-    projectImage: "/images/projects/langchain.jpeg",
+    team: [
+      { id: 1, name: "Anu B", role: "Developer" },
+      { id: 2, name: "Kyoungin Nam", role: "Developer" }
+    ],
+    github: null,
+    demo: null,
+    projectImage: "/images/projects/makeeat.png",
     highlights: [
-      "Custom LLM integration",
-      "Multi-model support",
-      "Enterprise security",
-      "Scalable architecture"
-    ]
+      "Achieved 98.88% accuracy in nutritional calculations",
+      "Enhanced OCR processing speed by 30% with hybrid models",
+      "Reduced processing costs by 80.67% using optimized pipelines",
+      "Scalable architecture with integration of GPT-4 and FatSecret API",
+      "Interactive recipe generation supported by user preferences and receipts"
+    ],
+    presentation: "/presentations/makeeat-presentation.pdf"
   },
   {
     id: 8,
-    title: "VoiceToKanban",
-    description: "AI-powered voice transcription and task management system using advanced LLMs.",
+    title: "HRM: Restaurant Menu Translator",
+    description: "HRM is a restaurant menu translator designed specifically for Korean travelers abroad. It leverages AI to recognize, translate, and summarize restaurant menus while addressing challenges such as mixed-language descriptions and inaccurate menu counts.",
     category: "LLM",
     status: "completed",
-    technologies: ["Python", "Whisper", "Claude", "Node.js", "React", "MongoDB"],
-    team: [
-      { id: 16, name: "Cathy Joo", role: "Product Designer" },
-      { id: 17, name: "Emily Wong", role: "ML Engineer" }
+    technologies: [
+      "GPT-4",
+      "Google OCR",
+      "Papago",
+      "Few-Shot Learning"
     ],
-    github: "https://github.com/voice-kanban",
-    projectImage: "/images/projects/voice-kanban.jpeg",
+    team: [
+      { id: 1, name: "Anu B", role: "AI Developer" },
+      { id: 2, name: "Kyoungin Nam", role: "AI Developer" }
+    ],
+    github: null,
+    demo: null,
+    projectImage: "/images/projects/hrm.png",
     highlights: [
-      "Real-time transcription",
-      "Task automation",
-      "Team collaboration",
-      "Custom LLM pipelines"
-    ]
+      "Incorporates Few-Shot Learning to reduce mixed-language errors by 42%",
+      "Enhances menu item count accuracy by 8.71% with Chain of Thought (CoT) prompting",
+      "Switches to asynchronous processing, reducing response time by 3 seconds per query",
+      "Supports seamless integration with popular translation APIs for higher accuracy",
+      "Scalable and optimized for diverse languages and menu structures"
+    ],
+    presentation: "/presentations/hrm-presentation.pdf"
   },
   {
     id: 9,
-    title: "RAGMaster",
-    description: "Advanced RAG implementation for enterprise document processing and Q&A.",
+    title: "News Explorer: Personalized News Aggregator",
+    description: "News Explorer is an AI-powered personalized news aggregator that curates and summarizes diverse news articles to provide balanced perspectives. It addresses the problem of information overload and biases by offering tailored summaries, analyses, and interactive insights.",
     category: "LLM",
-    status: "in-progress",
-    technologies: ["Python", "LlamaIndex", "Pinecone", "FastAPI", "Vue.js", "Claude"],
+    status: "completed",
+    technologies: [
+      "GPT-4",
+      "Fact-Checking Tools",
+      "Custom Search APIs"
+        ],
     team: [
-      { id: 18, name: "David Kim", role: "AI Engineer" },
-      { id: 19, name: "Lisa Chen", role: "Full Stack Developer" }
+      { id: 1, name: "Kihoon Kim", role: "AI Developer" },
+      { id: 2, name: "Haram Lee", role: "Research and Development" }
     ],
-    github: "https://github.com/ragmaster",
-    projectImage: "/images/projects/ragmaster.jpeg",
+    github: null,
+    demo: null,
+    projectImage: "/images/projects/explorer.png",
     highlights: [
-      "Document processing",
-      "Semantic search",
-      "Custom RAG pipeline",
-      "Enterprise integration"
-    ]
+      "Offers tailored news summaries based on user interests",
+      "Enhances fact-checking reliability through cascading and stacking approaches",
+      "Balances diverse perspectives for unbiased news consumption",
+      "Reduces information overload with concise, relevant content",
+      "Achieved 83% accuracy in summarization through optimized logic"
+    ],
+    presentation: "/presentations/news-explorer-presentation.pdf"
   },
   {
     id: 10,
-    title: "LLM Optimizer",
-    description: "Platform for fine-tuning and optimizing LLMs for specific business domains.",
+    title: "Devmon: Algorithm Problem-Solving Assistant",
+    description: "Devmon is a comprehensive assistant for solving algorithmic problems. It provides detailed explanations, recommended algorithms, step-by-step approaches, pseudocode, Python code, and complexity analysis to enhance learning efficiency and problem-solving skills.",
     category: "LLM",
     status: "completed",
-    technologies: ["Python", "PyTorch", "PEFT", "LoRA", "FastAPI", "Redis"],
+    technologies: [
+      "GPT-4",
+      "Node.js",
+      "React.js",
+      "Crawling API"
+      ],
     team: [
-      { id: 20, name: "Michael Park", role: "ML Engineer" },
-      { id: 21, name: "Sophie Wang", role: "Data Scientist" }
+      { id: 1, name: "Dongyeon Kim", role: "Backend Developer" },
+      { id: 2, name: "Minjong Kim", role: "Frontend Developer" }
     ],
-    github: "https://github.com/llm-optimizer",
-    projectImage: "/images/projects/llm-optimizer.jpeg",
+    github: null,
+    demo: null,
+    projectImage: "/images/projects/devmon.png",
     highlights: [
-      "Model fine-tuning",
-      "Performance optimization",
-      "Domain adaptation",
-      "Deployment pipeline"
-    ]
+      "Generates tailored problem-solving explanations with pseudocode and Python code",
+      "Supports beginner to advanced users with algorithmic insights",
+      "Optimized prompts for error handling and user-friendly outputs",
+      "Integrates real-time problem analysis with Baekjoon Online Judge and Solved.ac",
+      "Reduces cognitive load by providing structured and concise solutions"
+    ],
+    presentation: "/presentations/devmon-presentation.pdf"
   }
 ];
 

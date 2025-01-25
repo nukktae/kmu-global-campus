@@ -124,7 +124,7 @@
 </template>
 
 <script setup lang="ts">
-const activeField = ref(null);
+const activeField = ref<string | null>(null);
 
 const features = [
   {
