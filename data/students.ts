@@ -308,7 +308,7 @@ Undergraduate UX Researcher - Kookmin University (Mar 2023 - Jun 2023) | Seoul, 
   {
     id: '4',
     name: 'Kihoon Kim',
-    photo: '/images/students/kihoon.jpeg',
+    photo: '/images/students/kihoon.png',
     role: 'Software Engineer',
     location: 'Irvine, CA',
     nationality: 'South Korea',
