@@ -27,6 +27,7 @@
     "vanilla-tilt": "^1.8.1",
     "vue": "latest",
     "vue-router": "latest",
-    "vue-scrollama": "^2.0.6"
+    "vue-scrollama": "^2.0.6",
+    "nodemailer": "^6.9.0"
   }
 }

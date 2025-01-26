@@ -162,9 +162,36 @@ const form = ref({
   message: ''
 });
 
-const handleSubmit = () => {
-  console.log('Form submitted:', form.value);
-  // Add form submission logic here
+const handleSubmit = async () => {
+  try {
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(form.value)
+    });
+    
+    const result = await response.json();
+    
+    if (result.success) {
+      alert('Message sent successfully!');
+      // Reset form
+      form.value = {
+        company: '',
+        name: '',
+        email: '',
+        positionType: '',
+        location: '',
+        message: ''
+      };
+    } else {
+      alert('Failed to send message. Please try again.');
+    }
+  } catch (error) {
+    console.error('Submission error:', error);
+    alert('Failed to send message. Please try again.');
+  }
 };
 </script>
 
