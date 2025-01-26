@@ -20,6 +20,8 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from 'nuxt/app'
+
 const isLoading = ref(true);
 
 onMounted(() => {
@@ -28,6 +30,15 @@ onMounted(() => {
     isLoading.value = false;
   }, 2000);
 });
+
+useHead({
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    // For better compatibility across devices, you can also add:
+    { rel: 'apple-touch-icon', href: '/favicon.ico' },
+    { rel: 'shortcut icon', href: '/favicon.ico' }
+  ]
+})
 </script>
 <style>
 body {
