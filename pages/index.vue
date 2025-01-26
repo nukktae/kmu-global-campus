@@ -41,10 +41,6 @@
               <span>Show Projects</span>
               <i class="fas fa-code"></i>
             </button>
-            <NuxtLink to="/about" class="cta-btn accent">
-              <span>About Us</span>
-              <i class="fas fa-info-circle"></i>
-            </NuxtLink>
           </div>
         </div>
       </div>
