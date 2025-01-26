@@ -5,7 +5,7 @@
       <Background />
       <nav class="navigation">
         <div class="nav-content">
-          <div class="logo">Global Campus</div>
+          <div class="logo">KMU Global Campus</div>
           <div class="nav-links">
             <NuxtLink to="/" class="nav-link">Home</NuxtLink>
             <NuxtLink to="/students" class="nav-link">Students</NuxtLink>

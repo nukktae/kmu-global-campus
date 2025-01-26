@@ -5,6 +5,12 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/motion/nuxt',
   ],
+  app: {
+    head: {
+      title: 'KMU Global Campus',
+      titleTemplate: '%s - KMU Global Campus'
+    }
+  },
   motion: {
     directives: {
       'motion-fade': {

@@ -2,7 +2,7 @@
   <div class="loading-screen">
     <div class="loading-content">
       <div class="logo-container">
-        <div class="logo">Global Campus</div>
+        <div class="logo">KMU Global Campus</div>
         <div class="loading-bar">
           <div class="progress-bar"></div>
         </div>
