@@ -94,9 +94,9 @@
                   @blur="activeField = null"
                 >
                   <option value="">Select Location</option>
-                  <option value="onsite">On-site</option>
                   <option value="remote">Remote</option>
                   <option value="hybrid">Hybrid</option>
+                  <option value="onsite">On-site</option>
                 </select>
               </div>
 
@@ -326,6 +326,41 @@ textarea {
 .submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 245, 160, 0.3);
+}
+
+select {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  transition: all 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  cursor: pointer;
+}
+
+select option {
+  background: #1a1a1a;
+  color: white;
+  padding: 0.5rem;
+}
+
+select:focus {
+  border-color: #00F5A0;
+  box-shadow: 0 0 0 2px rgba(0, 245, 160, 0.2);
+  outline: none;
+}
+
+select.focused {
+  border-color: #00F5A0;
+  box-shadow: 0 0 0 2px rgba(0, 245, 160, 0.2);
 }
 
 @media (max-width: 1024px) {
