@@ -50,6 +50,20 @@ export const duel: Project = {
       description: "User access to creation history and deck management"
     }
   ],
+  targetAudience: [
+    {
+      range: "Students",
+      description: "Learners seeking efficient study material creation"
+    },
+    {
+      range: "Educators",
+      description: "Teachers creating learning materials from video content"
+    },
+    {
+      range: "Content Creators",
+      description: "YouTubers and educators repurposing video content"
+    }
+  ],
   userFlow: [
     {
       step: "Video Upload",

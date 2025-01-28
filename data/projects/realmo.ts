@@ -58,6 +58,10 @@ export const realmo: Project = {
     {
       range: "Platform Users",
       description: "2.067M monthly active users across various age groups"
+    },
+    {
+      range: "Streaming Partners",
+      description: "Content creators and streaming professionals"
     }
   ],
   userFlow: [

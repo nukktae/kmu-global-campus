@@ -9,8 +9,7 @@
           <div class="project-status" :class="projectData.status">
             {{ projectData.status }}
           </div>
-          <div class="project-category">
-            <i :class="getCategoryIcon(projectData.category)"></i>
+          <div class="project-category" :class="projectData.category">
             {{ projectData.category }}
           </div>
         </div>
@@ -276,17 +275,26 @@ const getStudentId = (name: string) => {
 }
 
 .project-status {
-  display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 50px;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
 .project-status.completed {
-  background: rgba(0, 245, 160, 0.15);
-  color: #00F5A0;
+  background: rgba(0, 200, 83, 0.15);
+  color: #00C853;
+}
+
+.project-status.in-progress {
+  background: rgba(255, 171, 0, 0.15);
+  color: #FFAB00;
+}
+
+.project-status.planned {
+  background: rgba(156, 39, 176, 0.15);
+  color: #9C27B0;
 }
 
 .project-title {
@@ -423,13 +431,27 @@ const getStudentId = (name: string) => {
 }
 
 .project-category {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-left: 1rem;
+}
+
+.project-category.FullStack {
+  background: rgba(75, 121, 228, 0.15);
+  color: #4B79E4;
+}
+
+.project-category.AWS {
+  background: rgba(255, 153, 0, 0.15);
+  color: #FF9900;
+}
+
+.project-category.LLM {
+  background: rgba(156, 39, 176, 0.15);
+  color: #9C27B0;
 }
 
 .team-grid {

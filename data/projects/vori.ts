@@ -49,6 +49,20 @@ export const vori: Project = {
       description: "Instant Kanban board updates with voice commands"
     }
   ],
+  targetAudience: [
+    {
+      range: "Agile Teams",
+      description: "Development teams using Kanban/Scrum methodologies"
+    },
+    {
+      range: "Project Managers",
+      description: "Team leads managing sprint planning and daily standups"
+    },
+    {
+      range: "Remote Teams",
+      description: "Distributed teams needing efficient task management"
+    }
+  ],
   userFlow: [
     {
       step: "Voice Input",

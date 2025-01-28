@@ -34,20 +34,20 @@ export const pawsomeDay: Project = {
   introduction: "Pawsome Day is revolutionizing pet daycare communication by bridging the gap between pet owners and daycare centers through an innovative mobile platform.",
   coreFeatures: [
     {
-      title: "In-app Daily Report Sharing",
-      description: "Allows instant updates with photos and notes for pet owners"
+      title: "Daily Reports",
+      description: "Automated generation and sharing of pet activity reports"
     },
     {
-      title: "Automated Pet Management",
-      description: "Generates and shares daily reports, reducing staff workload"
+      title: "Photo Management",
+      description: "AI-powered photo selection and organization"
     },
     {
-      title: "Data/Schedule Management",
-      description: "Centralized storage of all pet-related information to reduce data loss risks"
+      title: "Schedule Management",
+      description: "Centralized booking and appointment system"
     },
     {
-      title: "Photo Auto-Selection",
-      description: "Automated labeling helps daycare centers provide pet photos to owners conveniently"
+      title: "Real-time Updates",
+      description: "Instant notifications and status updates for pet owners"
     }
   ],
   targetAudience: [

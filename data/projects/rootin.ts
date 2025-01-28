@@ -36,20 +36,20 @@ export const rootin: Project = {
   introduction: "Rootin is a smart plant monitoring system designed to provide real-time soil moisture sensing and AI-powered care guidance. It integrates advanced technologies to ensure optimal plant health and growth.",
   coreFeatures: [
     {
-      title: "Real-time Soil Monitoring",
-      description: "Wireless sensor tracks moisture levels and provides status updates"
+      title: "Real-time Monitoring",
+      description: "Wireless sensor tracks soil moisture levels continuously"
     },
     {
-      title: "AI Plant Diagnostics",
-      description: "LLM-based chatbot for plant care advice and troubleshooting"
-    },
-    {
-      title: "Plant Database",
-      description: "Over 1 billion data points covering plant care information"
+      title: "AI Diagnostics",
+      description: "LLM-based plant health analysis and care recommendations"
     },
     {
       title: "Smart Notifications",
-      description: "Alerts for underwatering and water-logged conditions"
+      description: "Automated alerts for watering and care needs"
+    },
+    {
+      title: "Plant Database",
+      description: "Comprehensive plant care information and tracking"
     }
   ],
   targetAudience: [
