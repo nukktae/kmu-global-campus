@@ -83,6 +83,15 @@
                     View Portfolio
                   </span>
                 </a>
+                <a v-if="studentData.resume" 
+                   :href="studentData.resume" 
+                   target="_blank" 
+                   class="resume-button">
+                  <span class="button-content">
+                    <i class="fas fa-file-pdf"></i>
+                    Download Resume
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -162,7 +171,8 @@ const studentData = computed(() =>
     technologies: [],
     socialLinks: {},
     education: '',
-    interests: []
+    interests: [],
+    resume: ''
   }
 );
 
@@ -711,5 +721,30 @@ const getRandomColorClass = (index: number) => {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
   }
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 71, 87, 0.15);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  border-radius: 50px;
+  color: #FF4757;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.resume-button:hover {
+  background: rgba(255, 71, 87, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.2);
+}
+
+.resume-button .button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 </style> 

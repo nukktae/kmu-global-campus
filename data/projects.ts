@@ -39,7 +39,7 @@ export const projects: Project[] = [
     team: [
       { id: 1, name: "Anu Bilegdemberel", role: "Frontend Developer" },
       { id: 2, name: "Hojun Lim", role: "Backend Developer" },
-      { id: 3, name: "Jeonghee Lee", role: "UX/UI Designer" },
+      { id: 3, name: "Casey Lee", role: "UX/UI Designer" },
       { id: 4, name: "Deokryong Na", role: "Product Owner" },
       { id: 5, name: "Kihoon Kim", role: "Data Engineer" }
     ],
@@ -53,7 +53,7 @@ export const projects: Project[] = [
       "Comprehensive plant care database",
       "Smart notifications system"
     ],
-    presentation: "/presentations/rootin-pitch-deck.pdf"
+    presentation: "/files/presentations/rootin.pdf"
   },
   {
     id: 2,
@@ -71,8 +71,9 @@ export const projects: Project[] = [
     ],
     team: [
       { id: 1, name: "Haram Lee", role: "Backend Developer" },
-      { id: 2, name: "Jeonghee Lee", role: "Frontend Developer" },
-      { id: 3, name: "Casey Lee", role: "UX/UI Designer" }
+      { id: 2, name: "Dongyeon Kim", role: "Frontend Developer" },
+      { id: 3, name: "Cathy Joo", role: "UX/UI Designer" },
+      { id: 4, name: "Kyoungin Nam", role: "Data Engineer" }
     ],
     github: "https://github.com/pawsomeday/app",
     demo: "https://youtu.be/pawsomeday-demo",
@@ -84,7 +85,7 @@ export const projects: Project[] = [
       "Secure data management",
       "Real-time updates and notifications"
     ],
-    presentation: "/presentations/pawsomeday-deck.pdf"
+    presentation: "/files/presentations/pawsome.pdf"
   },
 
   // AWS Projects
@@ -115,7 +116,7 @@ export const projects: Project[] = [
       "Scalable AWS architecture reducing costs by 42% compared to on-premises solutions",
       "Processes 40M video minutes monthly with real-time performance"
     ],
-    presentation: "/presentations/duel-deck.pdf"
+    presentation: "/files/presentations/duel.pdf"
   },
   {
     id: 4,
@@ -131,7 +132,7 @@ export const projects: Project[] = [
     ],
     team: [
       { id: 1, name: "Anu B", role: "Solution Architect (Demo & Cost Estimation)" },
-      { id: 2, name: "Jeonghee Lee", role: "Solution Architect (Business Model)" },
+      { id: 2, name: "Casey Lee", role: "Solution Architect (Business Model)" },
       { id: 3, name: "Haram Lee", role: "Solution Architect (Architecture & Demo)" }
     ],
     github: null,
@@ -144,7 +145,7 @@ export const projects: Project[] = [
       "Achieved 400-500% higher traffic handling capacity post-optimization",
       "Real-time frame analysis and harmful content flagging"
     ],
-    presentation: "/presentations/aws-content-moderation.pdf"
+    presentation: "/files/presentations/realmo.pdf"
   },
   {
     id: 5,
@@ -159,7 +160,7 @@ export const projects: Project[] = [
       "API Gateway"
     ],
     team: [
-      { id: 1, name: "Nahyun Joo", role: "CPO, Frontend & Business" },
+      { id: 1, name: "Cathy Joo", role: "CPO, Frontend & Business" },
       { id: 2, name: "Hojun Lim", role: "CTO, Full-stack Developer" },
       { id: 3, name: "Kyoungin Nam", role: "CEO, Backend & Data Engineer" }
     ],
@@ -173,7 +174,7 @@ export const projects: Project[] = [
       "Integration with Amazon Transcribe for accurate speech-to-text conversion",
       "Scalable architecture leveraging AWS cloud services"
     ],
-    presentation: "/presentations/vori-deck.pdf"
+    presentation: "/files/presentations/vori.pdf"
   },
 
   // LLM Projects
@@ -190,8 +191,8 @@ export const projects: Project[] = [
       "HarryPotterDB"
     ],
     team: [
-      { id: 1, name: "Jeonghee Lee", role: "User & Market Research, Business Model" },
-      { id: 2, name: "Nahyun Joo", role: "Design and Service Development" }
+      { id: 1, name: "Casey Lee", role: "User & Market Research, Business Model" },
+      { id: 2, name: "Cathy Joo", role: "Design and Service Development" }
     ],
     github: null,
     demo: "https://kids-learning-assistant-production.up.railway.app/",
@@ -203,7 +204,7 @@ export const projects: Project[] = [
       "Seamless integration of voice-to-text, text-to-voice, and image generation",
       "Highly scalable with plans for plugin support for global e-book platforms"
     ],
-    presentation: "/presentations/story-chat-deck.pdf"
+    presentation: "/files/presentations/storychat.pdf"
   },
   {
     id: 7,
@@ -231,7 +232,7 @@ export const projects: Project[] = [
       "Scalable architecture with integration of GPT-4 and FatSecret API",
       "Interactive recipe generation supported by user preferences and receipts"
     ],
-    presentation: "/presentations/makeeat-presentation.pdf"
+    presentation: "/files/presentations/makeeat.pdf"
   },
   {
     id: 8,
@@ -259,7 +260,7 @@ export const projects: Project[] = [
       "Supports seamless integration with popular translation APIs for higher accuracy",
       "Scalable and optimized for diverse languages and menu structures"
     ],
-    presentation: "/presentations/hrm-presentation.pdf"
+    presentation: "/files/presentations/hrm.pdf"
   },
   {
     id: 9,
@@ -286,7 +287,7 @@ export const projects: Project[] = [
       "Reduces information overload with concise, relevant content",
       "Achieved 83% accuracy in summarization through optimized logic"
     ],
-    presentation: "/presentations/news-explorer-presentation.pdf"
+    presentation: "/files/presentations/newsexplorer.pdf"
   },
   {
     id: 10,
@@ -314,7 +315,7 @@ export const projects: Project[] = [
       "Integrates real-time problem analysis with Baekjoon Online Judge and Solved.ac",
       "Reduces cognitive load by providing structured and concise solutions"
     ],
-    presentation: "/presentations/devmon-presentation.pdf"
+    presentation: "/files/presentations/devmon.pdf.pdf"
   }
 ];
 

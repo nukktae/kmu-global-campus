@@ -20,6 +20,7 @@ export interface Student {
     content: string;
     publishDate: string;
   };
+  resume: string;
 }
 
 export const students: Student[] = [
@@ -110,7 +111,8 @@ RealMo, AWS Application, Grepp (Sep 2024 - Dec 2024):
 - Designed and deployed a real-time content moderation system using AWS Kinesis and Rekognition, improving accuracy by 95% and reducing false positives by 20%
 - Developed a cost-effective real-time moderation pipeline with AWS Kinesis and Rekognition, delivering low-latency performance during peak traffic`,
       publishDate: 'December 15, 2024'
-    }
+    },
+    resume: '/files/resumes/AnuBilegdemberel_Resume.pdf'
   },
   {
     id: '2',
@@ -208,7 +210,8 @@ CareerCup - Back-End Developer (Mar 2024 - Jun 2024) | Seoul, South Korea:
 - Implemented real-time messaging with WebSocket and STOMP, ensuring reliable and scalable user interactions.
 - Developed an admin dashboard using Bootstrap to monitor and manage platform activities.`,
       publishDate: 'December 20, 2024'
-    }
+    },
+    resume: '/files/resumes/Haram_Resume.pdf'
   },
   {
     id: '3',
@@ -303,7 +306,8 @@ Undergraduate UX Researcher - Kookmin University (Mar 2023 - Jun 2023) | Seoul, 
 - Conducted mixed-method usability tests with 5 users, achieving a 5.43x improvement in music control efficiency and a 12.6x increase in cycling safety compared to smartphones.
 - Created user storyboards and service blueprints to integrate interface design with technical requirements for ARSGs.`,
       publishDate: 'December 20, 2024'
-    }
+    },
+    resume: '/files/resumes/Deokryong_Resume.pdf'
   },
   {
     id: '4',
@@ -379,7 +383,8 @@ AWS Practitioner Certification:
 - Leveraging AWS Infrastructure and Analytics Services to Build a Serverless Data Lake.
 - Implemented a large-scale data processing and content generation system leveraging AI/ML and automation services.`,
       publishDate: 'December 20, 2024'
-    }
+    },
+    resume: '/files/resumes/Kihoon_Resume.pdf'
   },
   {
     id: '5',
@@ -434,7 +439,7 @@ Vori | Voice to Reports — Backend Developer (Sep 2024 - Present) | Irvine, CA:
 - Redeveloped the legacy AWS-based project, improving workflow speed by 57% and reducing costs by 83%.
 
 MakeEat | From Receipts to Delicious Recipes with AI — Backend Developer (Jul 2024 - Aug 2024) | Seoul, South Korea:
-- Achieved 56.19% improved text recognition accuracy compared to Google’s Tesseract OCR alone.
+- Achieved 56.19% improved text recognition accuracy compared to Google's Tesseract OCR alone.
 - Reduced API costs by 80.67% through preprocessing text instead of sending raw images to GPT-4.
 - Attained 30% faster processing speed compared to direct image analysis with GPT-4.
 - Developed 55.13% more accurate nutritional analysis compared to similar recipe apps in the market.
@@ -445,7 +450,8 @@ FPT Software | Data Analyst (Jul 2024 - Aug 2024) | Hanoi, Vietnam:
 - Processed data with SQL queries and SRS documentation in SQL Server.
 - Visualized data through real-time dashboards using Power BI for reporting and analysis.`,
       publishDate: 'December 20, 2024'
-    }
+    },
+    resume: '/files/resumes/KyounginNam_Resume.pdf'
   },
   {
     id: '6',
@@ -509,7 +515,8 @@ Devmon - Full-Stack Developer (Nov 2024 - Dec 2024) | Irvine, CA:
 - Delivered features such as recommended algorithms, detailed explanations, solution approaches, code samples, step-by-step breakdowns, space complexity analysis, and related problem suggestions.
 - Independently developed the entire project and implemented prompt engineering to ensure accurate and well-structured outputs.`,
       publishDate: 'December 20, 2024'
-    }
+    },
+    resume: '/files/resumes/Dongyeon_Kim_Resume.pdf'
   },
   {
     id: '7',
@@ -573,7 +580,8 @@ Achievements:
 - CareerView – AI-Based Mock Interview Platform: Winner, PBL 1st Hackathon (Sep 2024)
 - Garden in The Sharp – Sustainable Urban Installation: POSCO INFINELI Award (Aug 2022)`,
       publishDate: 'December 20, 2024'
-    }
+    },
+    resume: '/files/resumes/CathyJoo_Resume.pdf'
   },
   {
     id: '8',
@@ -582,30 +590,48 @@ Achievements:
     role: 'UX Designer',
     location: 'Irvine, CA',
     nationality: 'South Korea',
-    bio: 'User-focused designer with expertise in project design and development, user research, behavioral analysis, and market research. With a background in psychology, bringing deep understanding of user-centered design principles is one of my specialties, along with a commitment and passion for connecting users across various settings and backgrounds.',
-    currentProject: 'Rootin - IoT Sensor-Based Notification Service',
+    bio: 'User-focused designer with expertise in project design and development, user research, behavioral analysis and market research. With a background in psychology, bringing deep understanding of user centered design principles is one of my specialties along with a commitment and passion for connecting users across various settings and backgrounds.',
+    currentProject: 'Rootin - Designer',
     technologies: [
+      // Specialties
+      'Project Planning',
+      'User Interview',
+      'User Test',
+      'A/B Testing',
+      'Persona',
+      'Market Research',
+      'Competitive Analysis',
+      'User Journey Map',
+      'Information Architecture',
+      
+      // Tools
       'Figma',
       'Photoshop',
       'Illustrator',
       'HTML',
       'CSS',
-      'Framer'
+      'Framer',
+      
+      // Languages
+      'English',
+      'Spanish',
+      'Korean',
+      'Chinese'
     ],
     socialLinks: {
       email: 'caseylee247@gmail.com',
-      linkedin: 'https://www.jeongheelee.com',
-      github: 'https://github.com/caseylee'
+      linkedin: 'https://linkedin.com/in/caseylee',
+      portfolio: 'https://Caseylee.webflow.io'
     },
-    education: 'Kookmin University (Expected 2027), BA in English and Literature, BA in Psychology',
+    education: 'B.A. English and Literature, B.A. Psychology - Kookmin University (Mar 2022 - Expected 2027)',
     interests: [
-      'User Research',
-      'Behavioral Analysis',
-      'Market Research',
-      'Project Design'
+      'User-centered Design',
+      'Product Development',
+      'UX Research',
+      'UI Design'
     ],
     story: {
-      title: 'Creating User-Centric Experiences',
+      title: 'Creating User-Centric Design Solutions',
       content: `My journey in UX design focuses on creating intuitive and impactful solutions:
 
 Rootin (Sep 2024 - Nov 2024):
@@ -624,7 +650,8 @@ Connect (Sep 2024):
 - Conceptualized and designed a leading-edge career recommendation & management service that integrates psychological data with AI.
 - Solely planned the business concept and UI/UX design, anticipating to support 68.5% of South Korean youth without a career path and especially the 19.5% of those who are uncertain about their strengths.`,
       publishDate: 'December 20, 2024'
-    }
+    },
+    resume: '/files/resumes/Casey_Resume.pdf'
   },
   {
     id: '9',
@@ -705,6 +732,7 @@ Rootin (Aug 2024 - Dec 2024):
 - Designed scalable data pipelines using AWS Lambda for IoT sensor data
 - Implemented real-time plant watering management system combining hardware sensors and mobile app`,
       publishDate: 'December 20, 2024'
-    }
+    },
+    resume: '/files/resumes/Hojun_Lim_Resume.pdf'
   },
 ]; 
