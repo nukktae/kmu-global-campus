@@ -1,5 +1,6 @@
 <template>
   <div class="projects-page">
+    <Background />
     <div class="projects-container">
       <h1 class="title" v-motion-slide-bottom>Our Projects</h1>
       
@@ -22,6 +23,7 @@
 
       <!-- Projects Grid -->
       <TransitionGroup 
+        name="projects"
         tag="div" 
         class="projects-grid"
         :css="false"
@@ -31,7 +33,8 @@
         <div v-for="project in filteredProjects" 
              :key="project.id"
              class="project-card"
-             :data-category="project.category">
+             :data-category="project.category"
+             @click="handleCardClick($event, project.id)">
           <div class="card-content">
             <!-- Media Section -->
             <div class="project-media">
@@ -71,7 +74,7 @@
               <p class="project-description">{{ project.description }}</p>
               
               <div class="tech-stack">
-                <div v-for="tech in project.technologies" 
+                <div v-for="tech in project.technologies.slice(0, 3)" 
                      :key="tech"
                      class="tech-badge">
                   {{ tech }}
@@ -99,6 +102,8 @@
 import { ref, computed } from 'vue';
 import { gsap } from 'gsap';
 import { projects, projectCategories } from '~/data/projects';
+import { useRouter } from '#app';
+import Background from '~/components/Background.vue';
 
 const selectedCategory = ref('FullStack');
 
@@ -140,16 +145,32 @@ const leave = (el: Element, done: () => void) => {
     onComplete: done
   });
 };
+
+const router = useRouter();
+
+const handleCardClick = (event: MouseEvent, projectId: number) => {
+  const clickedElement = event.target as HTMLElement;
+  const isClickingLink = clickedElement.closest('a') !== null;
+  
+  console.log('Card clicked:', projectId, 'isClickingLink:', isClickingLink);
+  
+  if (!isClickingLink) {
+    router.push(`/projects/${projectId}`);
+  }
+};
 </script>
 
 <style scoped>
 .projects-page {
   padding: 6rem 2rem;
   min-height: 100vh;
-  background: transparent;
+  color: white;
+  position: relative;
 }
 
 .projects-container {
+  position: relative;
+  z-index: 1;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -182,8 +203,8 @@ const leave = (el: Element, done: () => void) => {
   position: relative;
   z-index: 2;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   height: 100%;
 }
@@ -415,6 +436,8 @@ const leave = (el: Element, done: () => void) => {
 }
 
 .media-btn {
+  position: relative;
+  z-index: 2;
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.2);
@@ -438,5 +461,9 @@ const leave = (el: Element, done: () => void) => {
 
 .media-btn.more-details:hover {
   background: rgba(0, 245, 160, 0.3);
+}
+
+.project-card a {
+  cursor: pointer;
 }
 </style> 

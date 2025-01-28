@@ -163,29 +163,45 @@ const studentData = computed(() =>
     nationality: '',
     bio: '',
     currentProject: '',
+    email: '',
     mentor: {
       name: '',
       company: '',
       role: ''
     },
     technologies: [],
-    socialLinks: {},
+    socialLinks: {
+      github: undefined,
+      linkedin: undefined,
+      portfolio: undefined
+    },
     education: '',
     interests: [],
-    resume: ''
+    resume: '',
+    story: {
+      content: ''
+    }
   }
 );
 
 // Add this function to parse the story content into structured experiences
 const parseExperiences = (content: string) => {
-  const experiences = [];
+  const experiences: Array<{
+    title: string;
+    date: string;
+    points: string[];
+  }> = [];
+  
   const sections = content.split('\n\n');
   
-  let currentExperience = null;
+  let currentExperience: {
+    title: string;
+    date: string;
+    points: string[];
+  } | null = null;
   
   for (const section of sections) {
     if (section.includes(':')) {
-      // This is a title line
       const [title, date] = section.split('(');
       currentExperience = {
         title: title.trim(),
@@ -194,7 +210,6 @@ const parseExperiences = (content: string) => {
       };
       experiences.push(currentExperience);
     } else if (section.trim().startsWith('-') && currentExperience) {
-      // These are bullet points
       currentExperience.points.push(section.trim().substring(2));
     }
   }
@@ -213,8 +228,8 @@ const getOrbitPosition = (index: number, total: number) => {
 }
 
 const handleHireClick = () => {
-  // You can customize this to open a contact form or mailto link
-  window.location.href = `mailto:${studentData.value.email}?subject=Job Opportunity for ${studentData.value.name}`;
+  const email = studentData.value.email || 'contact@example.com';
+  window.location.href = `mailto:${email}?subject=Job Opportunity for ${studentData.value.name}`;
 }
 
 // Add this function for random color assignment
@@ -332,6 +347,7 @@ const getRandomColorClass = (index: number) => {
   font-size: 3rem;
   font-weight: 700;
   background: linear-gradient(45deg, #fff, #4B79E4);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
@@ -453,6 +469,7 @@ const getRandomColorClass = (index: number) => {
   text-align: center;
   margin-bottom: 3rem;
   background: linear-gradient(45deg, #fff, #4B79E4);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

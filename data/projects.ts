@@ -4,6 +4,32 @@ interface TeamMember {
   role: string;
 }
 
+interface AgeGroup {
+  range: string;
+  description: string;
+}
+
+interface EducationalBenefit {
+  category: string;
+  description: string;
+}
+
+interface PipelineStep {
+  title: string;
+  technology: string;
+  description: string;
+}
+
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface UserFlow {
+  step: string;
+  description: string;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -17,6 +43,18 @@ export interface Project {
   projectImage: string;
   highlights: string[];
   presentation?: string;
+  introduction?: string;
+  coreFeatures?: Feature[];
+  targetAudience?: AgeGroup[];
+  educationalBenefits?: EducationalBenefit[];
+  expectedOutcomes?: string[];
+  userFlow?: UserFlow[];
+  technicalPipeline?: PipelineStep[];
+  ageGroupCustomization?: {
+    [key: string]: string;
+  };
+  expansionPlans?: string[];
+  developmentNotes?: string;
 }
 
 export const projects: Project[] = [
@@ -53,7 +91,104 @@ export const projects: Project[] = [
       "Comprehensive plant care database",
       "Smart notifications system"
     ],
-    presentation: "/files/presentations/rootin.pdf"
+    presentation: "/files/presentations/rootin.pdf",
+    introduction: "Rootin is a smart plant monitoring system designed to provide real-time soil moisture sensing and AI-powered care guidance. It integrates advanced technologies to ensure optimal plant health and growth.",
+    coreFeatures: [
+      {
+        title: "Real-time Soil Moisture Monitoring",
+        description: "Utilizes sensors to measure soil moisture levels in real-time."
+      },
+      {
+        title: "AI-Powered Care Guidance",
+        description: "Provides personalized notifications and recommendations based on plant needs."
+      },
+      {
+        title: "Comprehensive Data Collection",
+        description: "Collects and stores comprehensive plant care data."
+      },
+      {
+        title: "Smart Notifications System",
+        description: "Sends timely notifications based on plant health and care needs."
+      }
+    ],
+    targetAudience: [
+      {
+        range: "3-5 years",
+        description: "Preschoolers focusing on basic vocabulary and story comprehension"
+      },
+      {
+        range: "6-8 years",
+        description: "Early elementary students developing reading fluency and comprehension"
+      },
+      {
+        range: "9-12 years",
+        description: "Older elementary students enhancing critical thinking and analysis"
+      }
+    ],
+    educationalBenefits: [
+      {
+        category: "Language Development",
+        description: "Enhanced vocabulary, grammar, and expression"
+      },
+      {
+        category: "Cognitive Development",
+        description: "Improved comprehension, critical thinking, and creativity"
+      },
+      {
+        category: "Motivation",
+        description: "Increased engagement and sustained learning"
+      },
+      {
+        category: "Memory",
+        description: "Effective long-term memory retention"
+      }
+    ],
+    userFlow: [
+      {
+        step: "Book Selection",
+        description: "Choose books from a connected list (e.g., Harry Potter)"
+      },
+      {
+        step: "Conversation and Learning",
+        description: "AI tailors discussions based on book data"
+      },
+      {
+        step: "Image Generation",
+        description: "Create visuals from textual prompts to enrich the experience"
+      }
+    ],
+    technicalPipeline: [
+      {
+        title: "Speech-to-Text",
+        technology: "OpenAI Realtime API",
+        description: "Converts user voice input to text"
+      },
+      {
+        title: "AI Conversation",
+        technology: "OpenAI GPT-4",
+        description: "Generates responses using advanced language models"
+      },
+      {
+        title: "Text-to-Speech",
+        technology: "OpenAI TTS-1",
+        description: "Converts answers back to audio"
+      },
+      {
+        title: "Image Generation",
+        technology: "DALL-E-3",
+        description: "Creates visual content from textual descriptions"
+      }
+    ],
+    ageGroupCustomization: {
+      "Preschoolers": "Simpler expressions for younger children",
+      "Early Elementary": "Engaging scenarios for middle age groups",
+      "Older Elementary": "Critical thinking challenges for older children"
+    },
+    expansionPlans: [
+      "Integration with global e-book platforms as plugins",
+      "Real-time interactive reading and conversation for an enriched learning journey"
+    ],
+    developmentNotes: "Early development used Google APIs for voice and image processing before transitioning to OpenAI's suite."
   },
   {
     id: 2,
@@ -106,8 +241,8 @@ export const projects: Project[] = [
       { id: 2, name: "Dongyeon Kim", role: "Backend Engineer" },
       { id: 3, name: "Kihoon Kim", role: "Data Engineer" }
     ],
-    github: null,
-    demo: null,
+    github: undefined,
+    demo: undefined,
     projectImage: "/images/projects/duel.png",
     highlights: [
       "Automates deck creation from 1-hour video in under 8 minutes",
@@ -135,8 +270,8 @@ export const projects: Project[] = [
       { id: 2, name: "Casey Lee", role: "Solution Architect (Business Model)" },
       { id: 3, name: "Haram Lee", role: "Solution Architect (Architecture & Demo)" }
     ],
-    github: null,
-    demo: null,
+    github: undefined,
+    demo: undefined,
     projectImage: "/images/projects/realmo.png",
     highlights: [
       "Dynamic content moderation using AWS Rekognition",
@@ -164,8 +299,8 @@ export const projects: Project[] = [
       { id: 2, name: "Hojun Lim", role: "CTO, Full-stack Developer" },
       { id: 3, name: "Kyoungin Nam", role: "CEO, Backend & Data Engineer" }
     ],
-    github: null,
-    demo: null,
+    github: undefined,
+    demo: undefined,
     projectImage: "/images/projects/vori.png",
     highlights: [
       "Automatic ticket management based on voice commands",
@@ -194,7 +329,7 @@ export const projects: Project[] = [
       { id: 1, name: "Casey Lee", role: "User & Market Research, Business Model" },
       { id: 2, name: "Cathy Joo", role: "Design and Service Development" }
     ],
-    github: null,
+    github: undefined,
     demo: "https://kids-learning-assistant-production.up.railway.app/",
     projectImage: "/images/projects/storychat.png",
     highlights: [
@@ -204,7 +339,104 @@ export const projects: Project[] = [
       "Seamless integration of voice-to-text, text-to-voice, and image generation",
       "Highly scalable with plans for plugin support for global e-book platforms"
     ],
-    presentation: "/files/presentations/storychat.pdf"
+    presentation: "/files/presentations/storychat.pdf",
+    introduction: "Story Chat is an educational service designed for children to explore creative questions arising from reading books through AI-driven conversations and images.",
+    coreFeatures: [
+      {
+        title: "Book Access",
+        description: "Access to over 40,000 children's books through partnerships with leading e-book platforms like Epic!."
+      },
+      {
+        title: "Personalized Recommendations",
+        description: "Book recommendations tailored to the user's interests and reading level."
+      },
+      {
+        title: "Learning Tools",
+        description: "Word games and quizzes supported by 'Dictionary Lookup.'"
+      },
+      {
+        title: "Virtual Conversations",
+        description: "Virtual conversation modules that foster creativity and provide an immersive reading experience."
+      }
+    ],
+    targetAudience: [
+      {
+        range: "3-5 years",
+        description: "Preschoolers focusing on basic vocabulary and story comprehension"
+      },
+      {
+        range: "6-8 years",
+        description: "Early elementary students developing reading fluency and comprehension"
+      },
+      {
+        range: "9-12 years",
+        description: "Older elementary students enhancing critical thinking and analysis"
+      }
+    ],
+    educationalBenefits: [
+      {
+        category: "Language Development",
+        description: "Enhanced vocabulary, grammar, and expression"
+      },
+      {
+        category: "Cognitive Development",
+        description: "Improved comprehension, critical thinking, and creativity"
+      },
+      {
+        category: "Motivation",
+        description: "Increased engagement and sustained learning"
+      },
+      {
+        category: "Memory",
+        description: "Effective long-term memory retention"
+      }
+    ],
+    userFlow: [
+      {
+        step: "Book Selection",
+        description: "Choose books from a connected list (e.g., Harry Potter)"
+      },
+      {
+        step: "Conversation and Learning",
+        description: "AI tailors discussions based on book data"
+      },
+      {
+        step: "Image Generation",
+        description: "Create visuals from textual prompts to enrich the experience"
+      }
+    ],
+    technicalPipeline: [
+      {
+        title: "Speech-to-Text",
+        technology: "OpenAI Realtime API",
+        description: "Converts user voice input to text"
+      },
+      {
+        title: "AI Conversation",
+        technology: "OpenAI GPT-4",
+        description: "Generates responses using advanced language models"
+      },
+      {
+        title: "Text-to-Speech",
+        technology: "OpenAI TTS-1",
+        description: "Converts answers back to audio"
+      },
+      {
+        title: "Image Generation",
+        technology: "DALL-E-3",
+        description: "Creates visual content from textual descriptions"
+      }
+    ],
+    ageGroupCustomization: {
+      "Preschoolers": "Simpler expressions for younger children",
+      "Early Elementary": "Engaging scenarios for middle age groups",
+      "Older Elementary": "Critical thinking challenges for older children"
+    },
+    expansionPlans: [
+      "Integration with global e-book platforms as plugins",
+      "Real-time interactive reading and conversation for an enriched learning journey"
+    ],
+    developmentNotes: "Early development used Google APIs for voice and image processing before transitioning to OpenAI's suite."
   },
   {
     id: 7,
@@ -222,8 +454,8 @@ export const projects: Project[] = [
       { id: 1, name: "Anu B", role: "Developer" },
       { id: 2, name: "Kyoungin Nam", role: "Developer" }
     ],
-    github: null,
-    demo: null,
+    github: undefined,
+    demo: undefined,
     projectImage: "/images/projects/makeeat.png",
     highlights: [
       "Achieved 98.88% accuracy in nutritional calculations",
@@ -250,8 +482,8 @@ export const projects: Project[] = [
       { id: 1, name: "Anu B", role: "AI Developer" },
       { id: 2, name: "Kyoungin Nam", role: "AI Developer" }
     ],
-    github: null,
-    demo: null,
+    github: undefined,
+    demo: undefined,
     projectImage: "/images/projects/hrm.png",
     highlights: [
       "Incorporates Few-Shot Learning to reduce mixed-language errors by 42%",
@@ -277,8 +509,8 @@ export const projects: Project[] = [
       { id: 1, name: "Kihoon Kim", role: "AI Developer" },
       { id: 2, name: "Haram Lee", role: "Research and Development" }
     ],
-    github: null,
-    demo: null,
+    github: undefined,
+    demo: undefined,
     projectImage: "/images/projects/explorer.png",
     highlights: [
       "Offers tailored news summaries based on user interests",
@@ -305,8 +537,8 @@ export const projects: Project[] = [
       { id: 1, name: "Dongyeon Kim", role: "Backend Developer" },
       { id: 2, name: "Minjong Kim", role: "Frontend Developer" }
     ],
-    github: null,
-    demo: null,
+    github: undefined,
+    demo: undefined,
     projectImage: "/images/projects/devmon.png",
     highlights: [
       "Generates tailored problem-solving explanations with pseudocode and Python code",

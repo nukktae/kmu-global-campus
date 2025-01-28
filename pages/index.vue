@@ -87,7 +87,7 @@
 
             <div class="students-grid">
               <StudentCard 
-                v-for="student in students" 
+                v-for="student in sortedStudents" 
                 :key="student.id"
                 :student-data="student"
                 v-motion
@@ -202,8 +202,11 @@ const studentsSection = ref(null)
 const storiesSection = ref(null)
 const hireSection = ref(null)
 
-const studentsWithStories = computed(() => {
-  return students.filter(student => student.story)
+const sortedStudents = computed(() => {
+  return [...students].sort((a, b) => {
+    if (a.isAvailable === b.isAvailable) return 0;
+    return a.isAvailable ? -1 : 1;
+  });
 })
 
 const truncateText = (text: string, length: number) => {

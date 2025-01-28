@@ -21,6 +21,7 @@ export interface Student {
     publishDate: string;
   };
   resume: string;
+  isAvailable: boolean;
 }
 
 export const students: Student[] = [
@@ -112,7 +113,8 @@ RealMo, AWS Application, Grepp (Sep 2024 - Dec 2024):
 - Developed a cost-effective real-time moderation pipeline with AWS Kinesis and Rekognition, delivering low-latency performance during peak traffic`,
       publishDate: 'December 15, 2024'
     },
-    resume: '/files/resumes/AnuBilegdemberel_Resume.pdf'
+    resume: '/files/resumes/AnuBilegdemberel_Resume.pdf',
+    isAvailable: true
   },
   {
     id: '2',
@@ -211,7 +213,8 @@ CareerCup - Back-End Developer (Mar 2024 - Jun 2024) | Seoul, South Korea:
 - Developed an admin dashboard using Bootstrap to monitor and manage platform activities.`,
       publishDate: 'December 20, 2024'
     },
-    resume: '/files/resumes/Haram_Resume.pdf'
+    resume: '/files/resumes/Haram_Resume.pdf',
+    isAvailable: false
   },
   {
     id: '3',
@@ -307,7 +310,8 @@ Undergraduate UX Researcher - Kookmin University (Mar 2023 - Jun 2023) | Seoul, 
 - Created user storyboards and service blueprints to integrate interface design with technical requirements for ARSGs.`,
       publishDate: 'December 20, 2024'
     },
-    resume: '/files/resumes/Deokryong_Resume.pdf'
+    resume: '/files/resumes/Deokryong_Resume.pdf',
+    isAvailable: false
   },
   {
     id: '4',
@@ -384,11 +388,12 @@ AWS Practitioner Certification:
 - Implemented a large-scale data processing and content generation system leveraging AI/ML and automation services.`,
       publishDate: 'December 20, 2024'
     },
-    resume: '/files/resumes/Kihoon_Resume.pdf'
+    resume: '/files/resumes/Kihoon_Resume.pdf',
+    isAvailable: true
   },
   {
     id: '5',
-    name: 'Kyoungin (Kellan) Nam',
+    name: 'Kyoungin Nam',
     photo: '/images/students/kyongin.jpeg',
     role: 'Data Engineer',
     location: 'Irvine, California, USA',
@@ -451,11 +456,12 @@ FPT Software | Data Analyst (Jul 2024 - Aug 2024) | Hanoi, Vietnam:
 - Visualized data through real-time dashboards using Power BI for reporting and analysis.`,
       publishDate: 'December 20, 2024'
     },
-    resume: '/files/resumes/KyounginNam_Resume.pdf'
+    resume: '/files/resumes/KyounginNam_Resume.pdf',
+    isAvailable: true
   },
   {
     id: '6',
-    name: 'Dongyeon (Marco) Kim',
+    name: 'Dongyeon Kim',
     photo: '/images/students/marco.jpeg',
     role: 'Front-End Developer',
     location: 'Irvine, CA',
@@ -516,7 +522,8 @@ Devmon - Full-Stack Developer (Nov 2024 - Dec 2024) | Irvine, CA:
 - Independently developed the entire project and implemented prompt engineering to ensure accurate and well-structured outputs.`,
       publishDate: 'December 20, 2024'
     },
-    resume: '/files/resumes/Dongyeon_Kim_Resume.pdf'
+    resume: '/files/resumes/Dongyeon_Kim_Resume.pdf',
+    isAvailable: true
   },
   {
     id: '7',
@@ -581,7 +588,8 @@ Achievements:
 - Garden in The Sharp – Sustainable Urban Installation: POSCO INFINELI Award (Aug 2022)`,
       publishDate: 'December 20, 2024'
     },
-    resume: '/files/resumes/CathyJoo_Resume.pdf'
+    resume: '/files/resumes/CathyJoo_Resume.pdf',
+    isAvailable: true
   },
   {
     id: '8',
@@ -651,7 +659,8 @@ Connect (Sep 2024):
 - Solely planned the business concept and UI/UX design, anticipating to support 68.5% of South Korean youth without a career path and especially the 19.5% of those who are uncertain about their strengths.`,
       publishDate: 'December 20, 2024'
     },
-    resume: '/files/resumes/Casey_Resume.pdf'
+    resume: '/files/resumes/Casey_Resume.pdf',
+    isAvailable: true
   },
   {
     id: '9',
@@ -733,6 +742,7 @@ Rootin (Aug 2024 - Dec 2024):
 - Implemented real-time plant watering management system combining hardware sensors and mobile app`,
       publishDate: 'December 20, 2024'
     },
-    resume: '/files/resumes/Hojun_Lim_Resume.pdf'
+    resume: '/files/resumes/Hojun_Lim_Resume.pdf',
+    isAvailable: true
   },
 ]; 

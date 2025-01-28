@@ -9,9 +9,10 @@
         <div class="image-container">
           <div class="image-overlay"></div>
           <img :src="studentData.photo" :alt="studentData.name">
-          <div class="role-badge">
-            <span class="role-dot"></span>
+          <div class="role-badge" :class="{ 'unavailable': !studentData.isAvailable }">
+            <span class="role-dot" :class="{ 'unavailable': !studentData.isAvailable }"></span>
             {{ studentData.role }}
+            <span v-if="!studentData.isAvailable" class="unavailable-text">Not Available</span>
           </div>
         </div>
         <div class="card-content">
@@ -409,5 +410,22 @@ const navigateToDetail = () => {
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.3),
     0 0 100px rgba(75, 121, 228, 0.1);
+}
+
+.role-badge.unavailable {
+  background: rgba(255, 71, 87, 0.95);
+}
+
+.role-dot.unavailable {
+  background: #ff4757;
+  box-shadow: 0 0 12px rgba(255, 71, 87, 0.5);
+}
+
+.unavailable-text {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 </style> 

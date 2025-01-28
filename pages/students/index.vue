@@ -30,7 +30,7 @@
 
           <div class="students-grid">
             <StudentCard 
-              v-for="student in students" 
+              v-for="student in sortedStudents" 
               :key="student.id"
               :student-data="student"
               v-motion
@@ -45,6 +45,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { students } from '~/data/students';
 import StudentGallery from '~/components/students/StudentGallery.vue';
 import StudentCard from '~/components/students/StudentCard.vue';
@@ -58,6 +59,13 @@ const stats = [
   
 
 ];
+
+const sortedStudents = computed(() => {
+  return [...students].sort((a, b) => {
+    if (a.isAvailable === b.isAvailable) return 0;
+    return a.isAvailable ? -1 : 1;
+  });
+});
 </script>
 
 <style scoped>
