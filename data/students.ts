@@ -443,7 +443,7 @@ AWS Practitioner Certification:
     ],
     socialLinks: {
       email: 'kname12@outlook.com',
-      linkedin: 'https://linkedin.com/in/kyongin-nam',
+      linkedin: 'https://www.linkedin.com/in/knnam12/',
       github: 'https://github.com/nampaca123'
     },
     education: 'Information Technology, Bachelor of Engineering, Kookmin University, Seoul, South Korea (Expected 2026); International Business, Bachelor of Business Administration, Kookmin University, Seoul, South Korea (Expected 2026)',

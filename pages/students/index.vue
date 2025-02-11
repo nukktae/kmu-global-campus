@@ -62,9 +62,12 @@ const stats = [
 
 const sortedStudents = computed(() => {
   return [...students].sort((a, b) => {
-    // If both are employed or both are not employed, maintain current order
+    // First handle Deokryong's case (unavailable, not employed)
+    if (a.name.includes('Deokryong') && !a.isAvailable) return 1;
+    if (b.name.includes('Deokryong') && !b.isAvailable) return -1;
+    
+    // Then handle employed vs available
     if (!!a.employmentStatus === !!b.employmentStatus) return 0;
-    // Move employed students to the bottom
     return a.employmentStatus ? 1 : -1;
   });
 });

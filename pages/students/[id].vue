@@ -11,12 +11,6 @@
             <div class="profile-header">
               <div class="profile-image-wrapper">
                 <img :src="studentData.photo" :alt="studentData.name">
-                <div class="status-ring">
-                  <div class="hire-status">
-                    <span class="status-dot"></span>
-                    Available for Hire
-                  </div>
-                </div>
               </div>
               
               <div class="header-info">
@@ -68,12 +62,6 @@
                 </div>
               </div>
               <div class="action-buttons">
-                <button class="hire-button" @click="handleHireClick">
-                  <span class="button-content">
-                    <i class="fas fa-paper-plane"></i>
-                    Hire {{ studentData.name.split(' ')[0] }}
-                  </span>
-                </button>
                 <a v-if="studentData.socialLinks?.portfolio" 
                    :href="studentData.socialLinks.portfolio" 
                    target="_blank" 
@@ -227,11 +215,6 @@ const getOrbitPosition = (index: number, total: number) => {
   }
 }
 
-const handleHireClick = () => {
-  const email = studentData.value.email || 'contact@example.com';
-  window.location.href = `mailto:${email}?subject=Job Opportunity for ${studentData.value.name}`;
-}
-
 // Add this function for random color assignment
 const getRandomColorClass = (index: number) => {
   const colors = [
@@ -320,23 +303,6 @@ const getRandomColorClass = (index: number) => {
   object-fit: cover;
   border-radius: 20px;
   border: 3px solid rgba(255, 255, 255, 0.1);
-}
-
-.status-ring {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-}
-
-.hire-status {
-  background: rgba(75, 121, 228, 0.15);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  border: 1px solid rgba(75, 121, 228, 0.3);
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .header-info {
