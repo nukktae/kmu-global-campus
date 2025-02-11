@@ -22,6 +22,11 @@ export interface Student {
   };
   resume: string;
   isAvailable: boolean;
+  employmentStatus?: {
+    status: string;
+    company: string;
+    role: string;
+  };
 }
 
 export const students: Student[] = [
@@ -114,7 +119,12 @@ RealMo, AWS Application, Grepp (Sep 2024 - Dec 2024):
       publishDate: 'December 15, 2024'
     },
     resume: '/files/resumes/AnuBilegdemberel_Resume.pdf',
-    isAvailable: true
+    isAvailable: false,
+    employmentStatus: {
+      status: 'employed',
+      company: 'Handier, Inc',
+      role: 'Software Engineer'
+    }
   },
   {
     id: '2',
@@ -214,7 +224,12 @@ CareerCup - Back-End Developer (Mar 2024 - Jun 2024) | Seoul, South Korea:
       publishDate: 'December 20, 2024'
     },
     resume: '/files/resumes/Haram_Resume.pdf',
-    isAvailable: false
+    isAvailable: false,
+    employmentStatus: {
+      status: 'employed',
+      company: 'James Worldwide',
+      role: 'Software Engineer'
+    }
   },
   {
     id: '3',
@@ -311,7 +326,8 @@ Undergraduate UX Researcher - Kookmin University (Mar 2023 - Jun 2023) | Seoul, 
       publishDate: 'December 20, 2024'
     },
     resume: '/files/resumes/Deokryong_Resume.pdf',
-    isAvailable: false
+    isAvailable: false,
+    employmentStatus: null
   },
   {
     id: '4',
@@ -389,7 +405,12 @@ AWS Practitioner Certification:
       publishDate: 'December 20, 2024'
     },
     resume: '/files/resumes/Kihoon_Resume.pdf',
-    isAvailable: true
+    isAvailable: false,
+    employmentStatus: {
+      status: 'employed',
+      company: 'Babidi',
+      role: 'Software Engineer'
+    }
   },
   {
     id: '5',
@@ -457,7 +478,8 @@ FPT Software | Data Analyst (Jul 2024 - Aug 2024) | Hanoi, Vietnam:
       publishDate: 'December 20, 2024'
     },
     resume: '/files/resumes/KyounginNam_Resume.pdf',
-    isAvailable: true
+    isAvailable: true,
+    employmentStatus: null
   },
   {
     id: '6',
@@ -523,7 +545,8 @@ Devmon - Full-Stack Developer (Nov 2024 - Dec 2024) | Irvine, CA:
       publishDate: 'December 20, 2024'
     },
     resume: '/files/resumes/Dongyeon_Kim_Resume.pdf',
-    isAvailable: true
+    isAvailable: true,
+    employmentStatus: null
   },
   {
     id: '7',
@@ -589,7 +612,12 @@ Achievements:
       publishDate: 'December 20, 2024'
     },
     resume: '/files/resumes/CathyJoo_Resume.pdf',
-    isAvailable: true
+    isAvailable: true,
+    employmentStatus: {
+      status: 'employed',
+      company: 'JobKoreaUSA',
+      role: 'Product Designer'
+    }
   },
   {
     id: '8',
@@ -660,7 +688,8 @@ Connect (Sep 2024):
       publishDate: 'December 20, 2024'
     },
     resume: '/files/resumes/Casey_Resume.pdf',
-    isAvailable: true
+    isAvailable: true,
+    employmentStatus: null
   },
   {
     id: '9',
@@ -743,6 +772,11 @@ Rootin (Aug 2024 - Dec 2024):
       publishDate: 'December 20, 2024'
     },
     resume: '/files/resumes/Hojun_Lim_Resume.pdf',
-    isAvailable: true
+    isAvailable: true,
+    employmentStatus: {
+      status: 'employed',
+      company: 'JobKoreaUSA',
+      role: 'Software Engineer'
+    }
   },
 ]; 

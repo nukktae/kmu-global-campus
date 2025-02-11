@@ -3,16 +3,36 @@
        @mouseenter="isHovered = true" 
        @mouseleave="isHovered = false"
        @click="navigateToDetail">
-    <div class="card-inner" :class="{ 'is-flipped': isHovered }">
+    <div class="card-inner" :class="{ 
+      'is-flipped': isHovered, 
+      'employed': studentData.employmentStatus?.status === 'employed',
+      'unavailable': !studentData.isAvailable && !studentData.employmentStatus
+    }">
       <!-- Front of card -->
       <div class="card-front">
         <div class="image-container">
           <div class="image-overlay"></div>
           <img :src="studentData.photo" :alt="studentData.name">
-          <div class="role-badge" :class="{ 'unavailable': !studentData.isAvailable }">
-            <span class="role-dot" :class="{ 'unavailable': !studentData.isAvailable }"></span>
-            {{ studentData.role }}
-            <span v-if="!studentData.isAvailable" class="unavailable-text">Not Available</span>
+          <div class="role-badge" 
+               :class="{ 
+                 'employed': studentData.employmentStatus?.status === 'employed',
+                 'unavailable': !studentData.isAvailable && !studentData.employmentStatus
+               }">
+            <span class="role-dot" 
+                  :class="{ 
+                    'employed': studentData.employmentStatus?.status === 'employed',
+                    'unavailable': !studentData.isAvailable && !studentData.employmentStatus 
+                  }">
+            </span>
+            <span v-if="studentData.employmentStatus?.status === 'employed'">
+              Employed at {{ studentData.employmentStatus.company }}
+            </span>
+            <span v-else-if="!studentData.isAvailable && !studentData.employmentStatus">
+              Not Available
+            </span>
+            <span v-else>
+              {{ studentData.role }}
+            </span>
           </div>
         </div>
         <div class="card-content">
@@ -413,19 +433,72 @@ const navigateToDetail = () => {
 }
 
 .role-badge.unavailable {
-  background: rgba(255, 71, 87, 0.95);
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.95), rgba(240, 50, 70, 0.95));
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.2);
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
 }
 
 .role-dot.unavailable {
   background: #ff4757;
   box-shadow: 0 0 12px rgba(255, 71, 87, 0.5);
+  animation: pulse-red 2s infinite;
 }
 
-.unavailable-text {
-  font-size: 0.75rem;
-  opacity: 0.9;
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 71, 87, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+  }
+}
+
+.card-inner.unavailable {
+  border: 1px solid rgba(255, 71, 87, 0.2);
+  box-shadow: 0 0 20px rgba(255, 71, 87, 0.1);
+}
+
+/* Add new styles for employed status */
+.role-badge.employed {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.95), rgba(5, 150, 105, 0.95));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+
+.role-dot.employed {
+  background: #34d399;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(52, 211, 153, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+  }
+}
+
+/* Update hover effects for employed cards */
+.student-card:hover .role-badge.employed {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+}
+
+/* Add a subtle glow effect for employed cards */
+.card-inner.employed {
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
 }
 </style> 

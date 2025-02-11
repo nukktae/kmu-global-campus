@@ -204,8 +204,13 @@ const hireSection = ref(null)
 
 const sortedStudents = computed(() => {
   return [...students].sort((a, b) => {
-    if (a.isAvailable === b.isAvailable) return 0;
-    return a.isAvailable ? -1 : 1;
+    // First handle Deokryong's case (unavailable, not employed)
+    if (a.name.includes('Deokryong') && !a.isAvailable) return 1;
+    if (b.name.includes('Deokryong') && !b.isAvailable) return -1;
+    
+    // Then handle employed vs available
+    if (!!a.employmentStatus === !!b.employmentStatus) return 0;
+    return a.employmentStatus ? 1 : -1;
   });
 })
 

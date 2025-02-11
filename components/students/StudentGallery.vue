@@ -3,13 +3,16 @@
     <canvas ref="canvas" class="gallery-canvas" />
     <div class="gallery-overlay">
       <div class="cards-container">
-        <div v-for="student in students" 
+        <div v-for="student in sortedStudents" 
              :key="student.id"
              class="student-card-wrapper"
              @mouseenter="onCardHover(student)"
              @mouseleave="onCardLeave">
           <div class="student-card" 
-               :class="{ 'is-hovered': hoveredStudent?.id === student.id }"
+               :class="{ 
+                 'is-hovered': hoveredStudent?.id === student.id,
+                 'employed': student.employmentStatus?.status === 'employed'
+               }"
                :style="getCardStyle(student)">
             <img :src="student.photo" :alt="student.name">
             <div class="card-content">
@@ -33,6 +36,19 @@ const props = defineProps<{
 
 const hoveredStudent = ref<Student | null>(null);
 
+// Add sorted students computed property
+const sortedStudents = computed(() => {
+  return [...props.students].sort((a, b) => {
+    // First handle Deokryong's case (unavailable, not employed)
+    if (a.name.includes('Deokryong') && !a.isAvailable) return 1;
+    if (b.name.includes('Deokryong') && !b.isAvailable) return -1;
+    
+    // Then handle employed vs available
+    if (!!a.employmentStatus === !!b.employmentStatus) return 0;
+    return a.employmentStatus ? 1 : -1;
+  });
+});
+
 function onCardHover(student: Student) {
   hoveredStudent.value = student;
 }
@@ -42,9 +58,10 @@ function onCardLeave() {
 }
 
 function getCardStyle(student: Student) {
-  const index = props.students.indexOf(student);
-  const angle = (index * 360) / props.students.length;
-  const radius = 600; // Adjust this value to change the circle size
+  // Use sortedStudents instead of props.students for positioning
+  const index = sortedStudents.value.indexOf(student);
+  const angle = (index * 360) / sortedStudents.value.length;
+  const radius = 600;
   
   return {
     transform: `

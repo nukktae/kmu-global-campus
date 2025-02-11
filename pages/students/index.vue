@@ -62,8 +62,10 @@ const stats = [
 
 const sortedStudents = computed(() => {
   return [...students].sort((a, b) => {
-    if (a.isAvailable === b.isAvailable) return 0;
-    return a.isAvailable ? -1 : 1;
+    // If both are employed or both are not employed, maintain current order
+    if (!!a.employmentStatus === !!b.employmentStatus) return 0;
+    // Move employed students to the bottom
+    return a.employmentStatus ? 1 : -1;
   });
 });
 </script>
